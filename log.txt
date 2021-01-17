@@ -1,0 +1,25 @@
+Sunday 17 06:59 PM Bucharest
+Temp: -5 C Temp_min: -5 C Temp_max: -4 C
+Presiune: 1017 hPa Umiditate: 74% Viteza: 1.54km/h
+Rasarit: 07:47 AM Apus: 05:03 PM
+
+Sunday 17 06:59 PM Cluj-Napoca
+Temp: -9 C Temp_min: -13 C Temp_max: -8 C
+Presiune: 1016 hPa Umiditate: 86% Viteza: 1.03km/h
+Rasarit: 08:04 AM Apus: 05:06 PM
+
+Sunday 17 06:59 PM Berlin
+Temp: -1 C Temp_min: -1 C Temp_max: -1 C
+Presiune: 1021 hPa Umiditate: 80% Viteza: 2.57km/h
+Rasarit: 08:07 AM Apus: 04:24 PM
+
+Sunday 17 06:59 PM Bruges
+Temp: 5 C Temp_min: 5 C Temp_max: 6 C
+Presiune: 1024 hPa Umiditate: 88% Viteza: 0.89km/h
+Rasarit: 08:42 AM Apus: 05:11 PM
+
+Sunday 17 06:59 PM Madrid
+Temp: 5 C Temp_min: 4 C Temp_max: 7 C
+Presiune: 1028 hPa Umiditate: 45% Viteza: 2.06km/h
+Rasarit: 08:34 AM Apus: 06:14 PM
+
