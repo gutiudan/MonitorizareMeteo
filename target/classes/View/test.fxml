@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="city" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="50.0" layoutY="55.0" text="Country:" />
+      <Label layoutX="400.0" layoutY="55.0" text="City:" />
+      <ComboBox fx:id="countryField" layoutX="50.0" layoutY="78.0" onAction="#SelectCountry" prefWidth="150.0" promptText="Alege..." />
+      <ComboBox fx:id="cityField" layoutX="400.0" layoutY="78.0" onAction="#SelectCity" prefWidth="150.0" promptText="Alege..." />
+      <Label fx:id="cityName" layoutX="50.0" layoutY="138.0" prefHeight="35.0" prefWidth="228.0" textFill="#26a6bf">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateField" layoutX="50.0" layoutY="165.0" prefHeight="20.0" prefWidth="228.0" textFill="#26a6bf" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="322.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="descriptionField" layoutX="50.0" layoutY="182.0" prefHeight="20.0" prefWidth="228.0" textFill="#26a6bf">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="temperatureField" alignment="CENTER" layoutX="110.0" layoutY="233.0" prefHeight="70.0" prefWidth="70.0">
+         <font>
+            <Font name="Arial" size="45.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageField" fitHeight="60.0" fitWidth="60.0" layoutX="50.0" layoutY="238.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="celsiusField" layoutX="184.0" layoutY="243.0" onMouseClicked="#celsiusClick" prefHeight="25.0" prefWidth="23.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="lineField" layoutX="207.0" layoutY="243.0" prefHeight="25.0" prefWidth="23.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <Label fx:id="fahrenheitField" layoutX="219.0" layoutY="243.0" onMouseClicked="#fahrenheitClick" prefHeight="25.0" prefWidth="23.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="minTemperatureField" layoutX="300.0" layoutY="188.0" prefHeight="25.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="maxTemperatureField" layoutX="300.0" layoutY="213.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="pressureField" layoutX="300.0" layoutY="235.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="humidityField" layoutX="300.0" layoutY="260.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="windSpeed" layoutX="300.0" layoutY="290.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="sunRise" layoutX="300.0" layoutY="315.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="sunSet" layoutX="300.0" layoutY="340.0" prefHeight="17.0" prefWidth="200.0" textFill="#26a6bf">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
