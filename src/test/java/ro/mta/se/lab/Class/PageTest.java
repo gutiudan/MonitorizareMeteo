@@ -2,20 +2,38 @@ package ro.mta.se.lab.Class;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import static  org.mockito.Mockito.*;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classname PageTest
+ * Implementeaza clasa PageTest care testeaza
+ * corectitudinea datelor introduse in
+ * fisierul de configurare
+ *
+ * @author Dan-Cristian Gutiu
+ */
+
 public class PageTest {
+    /**
+     * Declararea membrilor
+     */
     private Page pageTest = null;
     private Parser parserTest = null;
+
+    /**
+     * Initializare pagina, mock
+     */
     @Before
     public void setUp(){
         pageTest = new Page();
         pageTest.Read("http://api.openweathermap.org/data/2.5/weather?q=Bucharest&appid=98de787066a4c24216f834be520b4726");
         parserTest = mock(Parser.class);
     }
+
+    /**
+     * Testarea functiilor
+     */
     @Test
     public void getCityId(){
         when(parserTest.getValue("id", "int", pageTest.getResponseBody())).thenReturn("683506");

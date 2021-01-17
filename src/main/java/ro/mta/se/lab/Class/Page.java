@@ -92,9 +92,12 @@ public class Page {
         Parser parser = Parser.getInstance();
         this.cityId = Integer.parseInt(parser.getValue("id", "int", responseBody));
         this.cityName = parser.getValue("name", "String", responseBody);
-        this.cityLatitude = Double.parseDouble(parser.getObject_getValue("coord", "lat", "double", responseBody));
-        this.cityLongitude = Double.parseDouble(parser.getObject_getValue("coord", "lon", "double", responseBody));
-        this.countryCode = parser.getObject_getValue("sys", "country", "String", responseBody);
+        this.cityLatitude = Double.parseDouble(parser.getObject_getValue("coord", "lat",
+                "double", responseBody));
+        this.cityLongitude = Double.parseDouble(parser.getObject_getValue("coord", "lon",
+                "double", responseBody));
+        this.countryCode = parser.getObject_getValue("sys", "country", "String",
+                responseBody);
 
         this.responseBody = responseBody;
     }

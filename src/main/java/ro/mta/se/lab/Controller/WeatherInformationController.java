@@ -23,10 +23,20 @@ import javafx.scene.image.ImageView;
 import javafx.scene.image.Image ;
 import javafx.scene.paint.Color;
 
+/**
+ * Classname clasa WeatherInformationController
+ * Implementeaza clasa WeatherInformationController
+ * care reprezinta controlerul arhitecturei
+ * MVC
+ *
+ * @author Dan-Cristian Gutiu
+ */
 
 public class WeatherInformationController implements Initializable {
+    /**
+     * Declararea membrilor
+     */
     private ObservableList<Country> countryList;
-
     private int minTemperature;
     private int maxTemperature;
 
@@ -83,18 +93,26 @@ public class WeatherInformationController implements Initializable {
     private boolean celsiusButton = true;
     private boolean fahrenheitButton = false;
 
-    public WeatherInformationController(ObservableList<Country> countryList) {
-        this.countryList = countryList;
-    }
-
+    /**
+     * Transformare din grade Celsius
+     * in grade Fahrenheit
+     */
     public double toFahrenheit(int fromCelsius){
         return ((fromCelsius) * 1.8 + 32);
     }
 
+    /**
+     * Transformare din grade Fahrenheit
+     * in grade Celsius
+     */
     public double toCelsius(int fromFahrenheit){
         return ((fromFahrenheit - 32) / 1.8);
     }
 
+    /**
+     * Seteaza toate elementele interfetei
+     * cu null
+     */
     public void setAllNull(){
         cityName.setText("");
         dateField.setText("");
@@ -113,6 +131,11 @@ public class WeatherInformationController implements Initializable {
         sunSet.setText("");
     }
 
+    /**
+     * Functie care la selectarea
+     * tarii afiseaza orasele
+     * corespunzatoare
+     */
     @FXML
     private void SelectCountry(ActionEvent event){
         setAllNull();
@@ -130,6 +153,11 @@ public class WeatherInformationController implements Initializable {
         cityField.setItems(citiesNames);
     }
 
+    /**
+     * Functie care se ocupa cu
+     * parsarea datelor JSON si
+     * completeaza elementele intefetei
+     */
     @FXML
     private void SelectCity(ActionEvent event){
         if (!cityField.getSelectionModel().isEmpty()){
@@ -199,7 +227,10 @@ public class WeatherInformationController implements Initializable {
         }
     }
 
-
+    /**
+     * Functie care transforma temperaturile
+     * din grade Celsius in Fahrenheit
+     */
     @FXML
     private void fahrenheitClick(MouseEvent event){
         if (!fahrenheitButton && celsiusButton) {
@@ -225,6 +256,10 @@ public class WeatherInformationController implements Initializable {
         }
     }
 
+    /**
+     * Functie care transforma temperaturile
+     * din grade Fahrenheit in Celsius
+     */
     @FXML
     private void celsiusClick(MouseEvent event){
         if (!celsiusButton && fahrenheitButton) {
@@ -250,8 +285,10 @@ public class WeatherInformationController implements Initializable {
         }
     }
 
-
-
+    /**
+     * Supreascrierea Clasei initialize din
+     * Initializable
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> CountriesCode = FXCollections.observableArrayList();
@@ -259,5 +296,12 @@ public class WeatherInformationController implements Initializable {
             CountriesCode.add(country.getCountryCode());
         }
         countryField.setItems(CountriesCode);
+    }
+
+    /**
+     * Geter clasa WeatherInformationController
+     */
+    public WeatherInformationController(ObservableList<Country> countryList) {
+        this.countryList = countryList;
     }
 }

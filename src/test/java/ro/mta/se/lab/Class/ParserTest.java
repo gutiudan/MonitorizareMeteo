@@ -2,10 +2,21 @@ package ro.mta.se.lab.Class;
 
 import org.junit.Before;
 import org.junit.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classname ParserTest
+ * Implementeaza clasa ParserTest care testeaza
+ * corectitudinea datelor introduse in
+ * fisierul de configurare
+ *
+ * @author Dan-Cristian Gutiu
+ */
+
 public class ParserTest {
+    /**
+     * Declararea membrilor
+     */
     Parser parser = null;
     String jsonText = "{\"coord\":{\"lon\":26.1063,\"lat\":44.4323},\"" +
             "weather\":[{\"id\":801,\"main\":\"Clouds\",\"description\":\"few clouds\",\"icon\":\"02d\"}]," +
@@ -14,10 +25,18 @@ public class ParserTest {
             "\"wind\":{\"speed\":2.57,\"deg\":250},\"clouds\":{\"all\":20},\"dt\":1610880738," +
             "\"sys\":{\"type\":1,\"id\":6911,\"country\":\"RO\",\"sunrise\":1610862431,\"sunset\":1610895825}," +
             "\"timezone\":7200,\"id\":683506,\"name\":\"Bucharest\",\"cod\":200}";
+
+    /**
+     * Initializare parser
+     */
     @Before
     public void setUp(){
         parser = Parser.getInstance();
     }
+
+    /**
+     * Testarea functiilor
+     */
     @Test
     public void getValue(){
         assertEquals("683506", parser.getValue("id", "int", jsonText));

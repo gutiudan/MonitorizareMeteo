@@ -4,10 +4,23 @@ import javafx.collections.FXCollections;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class Parser {
+/**
+ * Classname Parser
+ * Implementeaza clasa Singleton Parser
+ * care se ocupa cu parsarea datelor JSON
+ *
+ * @author Dan-Cristian Gutiu
+ */
 
+public class Parser {
+    /**
+     * Declararea membrilor
+     */
     private static Parser INSTANCE = null;
 
+    /**
+     * Obtinerea instantei
+     */
     public static Parser getInstance(){
         if (INSTANCE == null){
             INSTANCE = new Parser();
@@ -15,9 +28,17 @@ public class Parser {
         return INSTANCE;
     }
 
+    /**
+     * Constructor de clasa Paser
+     */
     public Parser(){
 
     }
+
+    /**
+     * Parsarea datelor dupa obiectul JSON
+     * si o anumita valoare
+     */
     public String getValue(String searchWord, String dataType, String jsonText){
         JSONObject obj = new JSONObject(jsonText);
         if (dataType.equals("int")){
@@ -34,6 +55,10 @@ public class Parser {
         }
         return "null";
     }
+
+    /**
+     * Parsarea datelor dupa o anumita valoare
+     */
     public String getObject_getValue(String objectName, String searchWord, String dataType, String jsonText){
         JSONObject obj = new JSONObject(jsonText);
         JSONObject newObj = obj.getJSONObject(objectName);
@@ -56,6 +81,11 @@ public class Parser {
         return "null";
     }
 
+    /**
+     * Parsarea datelor dupa un anumit
+     * vector, obiect si o anumita
+     * valoare
+     */
     public String getArray_getObject_getValue(String objectArray, String searchWord, String dataType, String jsonText){
         JSONObject obj = new JSONObject(jsonText);
         JSONArray objArray = obj.getJSONArray(objectArray);
