@@ -7,15 +7,36 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Classname Logger
+ * Implementeaza clasa Singleton Logger
+ * care scrie informatiile despre istoricul
+ * afisarilor
+ *
+ * @author Dan-Cristian Gutiu
+ */
+
 public class Logger {
+    /**
+     * Declararea membrilor
+     */
     private static Logger INSTANCE = null;
     private String fileName = "log.txt";
+
+    /**
+     * Obtinerea instantei
+     */
     public static Logger getInstance(){
         if (INSTANCE == null){
             INSTANCE = new Logger();
         }
         return INSTANCE;
     }
+
+    /**
+     * Scrierea in fisier a datei
+     *  impreuna cu numele orasului
+     */
     public void writeDate_City(String text){
         try {
             BufferedWriter myWriter = new BufferedWriter(
@@ -29,6 +50,10 @@ public class Logger {
         }
 
     }
+
+    /**
+     * Scrierea in fisier a informatiilor
+     */
     public void writeToFile(String text){
         try {
             BufferedWriter myWriter = new BufferedWriter(

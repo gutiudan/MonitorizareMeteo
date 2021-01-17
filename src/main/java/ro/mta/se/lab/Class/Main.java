@@ -5,11 +5,19 @@ package ro.mta.se.lab.Class;
     import javafx.scene.Scene;
     import javafx.stage.Stage;
     import ro.mta.se.lab.Controller.WeatherInformationController;
-
     import java.io.File;
     import java.io.IOException;
     import java.util.List;
     import java.util.Scanner;
+
+/**
+ * Classname Main
+ * Implementeaza clasa Main care mosteneste
+ * clasa Application si implementeaza
+ * metoda start
+ *
+ * @author Dan-Cristian Gutiu
+ */
 
 public class Main extends Application
     {
@@ -18,6 +26,12 @@ public class Main extends Application
             launch(args);
         }
 
+        /**
+         * Citirea informatiilor din
+         * fisierul de configurare si formarea
+         * unor liste de orase pentru diferite tari
+         *
+         */
         public void ReadFile(){
             World world = World.getInstance();
             try {
@@ -64,6 +78,12 @@ public class Main extends Application
                 e.printStackTrace();
             }
         }
+
+        /**
+         * Incarcarea detaliilor descrise in Scene
+         * Builder si crearea scenei pe baza
+         * acestora
+         */
         public void start(Stage primaryStage) throws IOException
         {
             ReadFile();

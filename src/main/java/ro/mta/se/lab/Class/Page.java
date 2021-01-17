@@ -19,7 +19,18 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+/**
+ * Classname Page
+ * Implementeaza clasa Page care extrage
+ * obiectul JSON
+ *
+ * @author Dan-Cristian Gutiu
+ */
+
 public class Page {
+    /**
+     * Declararea membrilor
+     */
     private int cityId;
     private String cityName;
     private double cityLatitude;
@@ -28,14 +39,24 @@ public class Page {
     private City cityInformation;
     private String responseBody;
 
+    /**
+     * Constructor de clasa Page
+     */
     public Page(){
 
     }
 
+    /**
+     * Constructor de clasa Page
+     * cu parametrii
+     */
     public Page(City city) {
         this.cityInformation = city;
     }
 
+    /**
+     * Obtinerea obiectului JSON
+     */
     public void Read(String newURL){
         try {
 
@@ -50,20 +71,23 @@ public class Page {
         }
     }
 
+    /**
+     * Verificicarea corectitudinii
+     * informatiilor
+     */
     public boolean verifyInformation(){
-        if (this.cityId == this.getCityId()){
-            if (this.cityName.equals(this.getCityName())){
-                if (this.cityLatitude == this.getCityLatitude()){
-                    if (this.cityLongitude == this.getCityLongitude()){
-                        if (this.countryCode.equals(this.getCountryCode())){
-                            return true;
-                        }
-                    }
-                }
-            }
+        if (this.cityId == this.getCityId() && this.cityName.equals(this.getCityName()) &&
+                this.cityLatitude == this.getCityLatitude() && this.cityLongitude == this.getCityLongitude() &&
+                this.countryCode.equals(this.getCountryCode())){
+            return true;
         }
         return false;
     }
+
+    /**
+     * Obtinerea informatiilor pe baza
+     * obiectului JSON
+     */
     public void getInformation(String responseBody){
         Parser parser = Parser.getInstance();
         this.cityId = Integer.parseInt(parser.getValue("id", "int", responseBody));
@@ -75,27 +99,25 @@ public class Page {
         this.responseBody = responseBody;
     }
 
-    public int getCityId(){
-        return this.cityId;
-    }
-
+    /**
+     * Getere clasa Page
+     */
     public String getCityName(){
         return this.cityName;
     }
-
-    public double getCityLatitude(){
-        return this.cityLatitude;
-    }
-
-    public double getCityLongitude(){
-        return this.cityLongitude;
-    }
-
     public String getCountryCode(){
         return this.countryCode;
     }
-
     public String getResponseBody(){
         return this.responseBody;
+    }
+    public int getCityId(){
+        return this.cityId;
+    }
+    public double getCityLatitude(){
+        return this.cityLatitude;
+    }
+    public double getCityLongitude(){
+        return this.cityLongitude;
     }
 }
